@@ -1,56 +1,77 @@
 :root {
-    --primary-color: #003366;
-    --secondary-color: #f8f9fa;
-    --accent-color: #ffd700;
-    --text-color: #333;
+    --primary-color: #2c3e50;
+    --secondary-color: #ffffff;
+    --accent-color: #e67e22;
+    --text-color: #2c3e50;
+    --gray-light: #f8f9fa;
+    --gray-dark: #343a40;
+    --transition: all 0.3s ease-in-out;
 }
 
 body {
-    font-family: 'Arial', sans-serif;
-    line-height: 1.6;
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.8;
     margin: 0;
     padding: 0;
     color: var(--text-color);
+    scroll-behavior: smooth;
 }
 
 .navbar {
     position: fixed;
     width: 100%;
-    background: rgba(255, 255, 255, 0.95);
-    padding: 1rem 0;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    background: rgba(255, 255, 255, 0.98);
+    padding: 1.2rem 0;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.08);
     z-index: 1000;
+    transition: var(--transition);
 }
 
 .navbar .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
+    font-size: 2rem;
+    font-weight: 700;
     color: var(--primary-color);
-    margin-left: 2rem;
+    margin-left: 4rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 .nav-links {
     display: flex;
     list-style: none;
-    margin-right: 2rem;
-    gap: 2rem;
+    margin-right: 4rem;
+    gap: 3rem;
 }
 
 .nav-links a {
     text-decoration: none;
     color: var(--text-color);
     font-weight: 500;
-    transition: color 0.3s ease;
+    font-size: 1.1rem;
+    transition: var(--transition);
+    position: relative;
 }
 
-.nav-links a:hover {
-    color: var(--primary-color);
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent-color);
+    transition: var(--transition);
+}
+
+.nav-links a:hover::after {
+    width: 100%;
 }
 
 header {
     background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('header-bg.jpg');
     background-size: cover;
     background-position: center;
+    background-attachment: fixed;
     height: 100vh;
     display: flex;
     align-items: center;
@@ -61,22 +82,35 @@ header {
 
 .hero-content {
     padding: 2rem;
+    animation: fadeIn 1s ease-in;
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
 }
 
 .cta-button {
     display: inline-block;
-    padding: 1rem 2rem;
+    padding: 1.2rem 3rem;
     background-color: var(--accent-color);
-    color: var(--primary-color);
+    color: white;
     text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
+    border-radius: 50px;
+    font-weight: 600;
     margin-top: 2rem;
-    transition: transform 0.3s ease;
+    transition: var(--transition);
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .cta-button:hover {
     transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    background-color: #d35400;
 }
 
 .container {
@@ -94,20 +128,22 @@ header {
 
 .service-card {
     background: var(--secondary-color);
-    padding: 2rem;
-    border-radius: 10px;
+    padding: 3rem 2rem;
+    border-radius: 15px;
     text-align: center;
-    transition: transform 0.3s ease;
+    transition: var(--transition);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
 }
 
 .service-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
 }
 
 .service-card i {
-    font-size: 2.5rem;
-    color: var(--primary-color);
-    margin-bottom: 1rem;
+    font-size: 3rem;
+    color: var(--accent-color);
+    margin-bottom: 1.5rem;
 }
 
 .project-grid {
@@ -120,14 +156,25 @@ header {
 .project-card {
     position: relative;
     overflow: hidden;
-    border-radius: 10px;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: var(--transition);
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
 }
 
 .project-card img {
     width: 100%;
-    height: 250px;
+    height: 300px;
     object-fit: cover;
+    transition: var(--transition);
+}
+
+.project-card:hover img {
+    transform: scale(1.1);
 }
 
 .project-card h3 {
@@ -163,5 +210,16 @@ h2 {
     
     .hero-content h1 {
         font-size: 2rem;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
