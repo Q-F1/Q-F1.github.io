@@ -6,17 +6,74 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DEUCE Construction - Building Excellence</title>
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <header>
-        <h1>DEUCE Construction</h1>
-        <p>Building Excellence, Delivering Quality</p>
+    <nav class="navbar">
+        <div class="logo">DEUCE</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header id="home">
+        <div class="hero-content">
+            <h1>DEUCE Construction</h1>
+            <p>Building Excellence, Delivering Quality</p>
+            <a href="#contact" class="cta-button">Get Started</a>
+        </div>
     </header>
+
     <div class="container">
-        <section>
-            <h2>Welcome to DEUCE Construction</h2>
-            <p>We specialize in delivering high-quality construction services with professionalism and reliability.</p>
+        <section id="services" class="services-section">
+            <h2>Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fas fa-home"></i>
+                    <h3>Residential Construction</h3>
+                    <p>Custom homes built to your specifications</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-building"></i>
+                    <h3>Commercial Projects</h3>
+                    <p>Modern solutions for business spaces</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-tools"></i>
+                    <h3>Renovations</h3>
+                    <p>Transforming existing spaces</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="projects-section">
+            <h2>Featured Projects</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <img src="placeholder-1.jpg" alt="Project 1">
+                    <h3>Modern Office Complex</h3>
+                </div>
+                <div class="project-card">
+                    <img src="placeholder-2.jpg" alt="Project 2">
+                    <h3>Luxury Residence</h3>
+                </div>
+            </div>
         </section>
     </div>
+
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="contact-info">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-phone"></i> (555) 123-4567</p>
+                    <p><i class="fas fa-envelope"></i> info@deuceconstruction.com</p>
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
