@@ -348,4 +348,35 @@ h2 {
         padding: 1rem 2rem;
         font-size: 0.9rem;
     }
+    @supports (-webkit-touch-callout: none) {
+        header {
+            height: -webkit-fill-available;
+        }
+    }
+    
+    @media (hover: none) {
+        .nav-links a,
+        .footer-column a,
+        .cta-button {
+            padding: 0.8rem;
+        }
+        
+        .service-card,
+        .project-card {
+            cursor: pointer;
+            -webkit-tap-highlight-color: transparent;
+        }
+    }
+    
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
 }
