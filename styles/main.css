@@ -1,10 +1,10 @@
 :root {
-    --primary-color: #2c3e50;
-    --secondary-color: #ffffff;
-    --accent-color: #e67e22;
-    --text-color: #2c3e50;
-    --gray-light: #f8f9fa;
-    --gray-dark: #343a40;
+    --primary-color: #1B365D;    /* Navy blue */
+    --secondary-color: #ffffff;   /* White */
+    --accent-color: #4A6FA5;     /* Lighter navy blue */
+    --text-color: #2C3E50;       /* Dark gray-blue */
+    --gray-light: #F5F7FA;       /* Light gray */
+    --gray-dark: #2F4356;        /* Dark gray-blue */
     --transition: all 0.3s ease-in-out;
 }
 
@@ -25,6 +25,9 @@ body {
     box-shadow: 0 2px 15px rgba(0,0,0,0.08);
     z-index: 1000;
     transition: var(--transition);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .navbar .logo {
@@ -41,6 +44,7 @@ body {
     list-style: none;
     margin-right: 4rem;
     gap: 3rem;
+    align-items: center;
 }
 
 .nav-links a {
@@ -140,10 +144,23 @@ header {
     box-shadow: 0 15px 30px rgba(0,0,0,0.1);
 }
 
+.service-card:hover .icon {
+    transform: scale(1.1);
+    transition: var(--transition);
+}
+
 .service-card i {
     font-size: 3rem;
     color: var(--accent-color);
     margin-bottom: 1.5rem;
+}
+
+.icon {
+    width: 48px;
+    height: 48px;
+    margin: 0 auto 1rem;
+    display: block;
+    stroke: var(--accent-color);
 }
 
 .project-grid {
@@ -193,8 +210,60 @@ footer {
     padding: 3rem 0;
 }
 
-.contact-info i {
-    margin-right: 0.5rem;
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.footer-column {
+    text-align: left;
+}
+
+.footer-column h3 {
+    color: var(--secondary-color);
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+}
+
+.footer-column p {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.8rem;
+}
+
+.footer-column a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.footer-column a:hover {
+    opacity: 0.8;
+}
+
+.footer-column .icon {
+    width: 24px;
+    height: 24px;
+    margin: 0;
+    stroke: var(--secondary-color);
+}
+
+.social-icons {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.social-icons a {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.8rem;
 }
 
 h2 {
@@ -210,6 +279,23 @@ h2 {
     
     .hero-content h1 {
         font-size: 2rem;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .footer-column {
+        text-align: center;
+    }
+    
+    .footer-column p, .social-icons a {
+        justify-content: center;
+    }
+    
+    .social-icons {
+        align-items: center;
     }
 }
 
