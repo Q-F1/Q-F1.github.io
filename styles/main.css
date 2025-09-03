@@ -72,7 +72,7 @@ body {
 }
 
 header {
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../images/dune_bridge1.png');
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../images/dune_bridge1.PNG');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
