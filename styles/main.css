@@ -120,7 +120,7 @@ header {
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 4rem 2rem;
+    padding: 2rem 2rem;
 }
 
 .services-grid {
@@ -207,7 +207,7 @@ header {
 footer {
     background-color: var(--primary-color);
     color: white;
-    padding: 3rem 0;
+    padding: 0 0;
 }
 
 .footer-content {
@@ -270,6 +270,121 @@ h2 {
     text-align: center;
     color: var(--primary-color);
     margin-bottom: 2rem;
+}
+
+.about-section {
+    padding: 6rem 0 4rem 0;
+}
+
+.about-content {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.about-text h3 {
+    color: var(--primary-color);
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.team-profiles {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.team-member {
+    text-align: center;
+    padding: 1.5rem;
+    background: var(--gray-light);
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.team-member a {
+    display: inline-block;
+    transition: var(--transition);
+}
+
+.team-member a:hover .team-photo {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.team-photo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    border: 3px solid var(--primary-color);
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.team-member h4 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.team-member p:first-of-type {
+    font-weight: 600;
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+}
+
+.reviews-section {
+    padding: 6rem 0 4rem 0;
+    text-align: center;
+}
+
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.review-card {
+    background: var(--secondary-color);
+    padding: 2.5rem 2rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    border: 1px solid var(--gray-light);
+    transition: var(--transition);
+    text-align: center;
+}
+
+.review-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+.stars {
+    color: #ffd700;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    letter-spacing: 2px;
+}
+
+.review-card p {
+    font-style: italic;
+    color: var(--text-color);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+}
+
+.review-card h4 {
+    color: var(--primary-color);
+    font-weight: 600;
+    margin: 0;
+    font-size: 1rem;
 }
 
 @media (max-width: 768px) {
@@ -348,35 +463,53 @@ h2 {
         padding: 1rem 2rem;
         font-size: 0.9rem;
     }
-    @supports (-webkit-touch-callout: none) {
-        header {
-            height: -webkit-fill-available;
-        }
+
+    .team-photo {
+        width: 100px;
+        height: 100px;
     }
     
-    @media (hover: none) {
-        .nav-links a,
-        .footer-column a,
-        .cta-button {
-            padding: 0.8rem;
-        }
-        
-        .service-card,
-        .project-card {
-            cursor: pointer;
-            -webkit-tap-highlight-color: transparent;
-        }
-    }
-    
-    @keyframes fadeIn {
-        from {
-            opacity: 0;
-            transform: translateY(20px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
+    .team-profiles {
+        grid-template-columns: 1fr;
     }
 
+    .reviews-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .review-card {
+        padding: 2rem 1.5rem;
+    }
+}
+
+@supports (-webkit-touch-callout: none) {
+    header {
+        height: -webkit-fill-available;
+    }
+}
+
+@media (hover: none) {
+    .nav-links a,
+    .footer-column a,
+    .cta-button {
+        padding: 0.8rem;
+    }
+    
+    .service-card,
+    .project-card {
+        cursor: pointer;
+        -webkit-tap-highlight-color: transparent;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

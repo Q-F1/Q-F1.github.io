@@ -3,78 +3,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Deuce Construction</title>
+    <title>Project Gallery - Deuce Construction</title>
     <meta name="description" content="Deuce Construction - Second to None">
     <meta name="keywords" content="construction, carpentry, marine, outdoor, residential">
     <meta name="author" content="Deuce Construction">
     <link rel="icon" href="images/dc logo.png" type="image/png">
     <link rel="stylesheet" href="styles/main.css">
+    <style>
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+        .gallery-item {
+            border: 1px solid #ddd;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        .gallery-item p {
+            margin-top: 10px;
+            text-align: center;
+        }
+        .gallery-section {
+            padding: 6rem 0 4rem 0;
+        }
+    </style>
 </head>
 <body>
     <nav class="navbar">
         <div class="logo"><img src="images/dc logo.png" alt="DC" style="height: 100px; width: auto;"></div>
         <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#services">Services</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#services">Services</a></li>
             <li><a href="projects.html">Projects</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
 
-    <header id="home">
-        <div class="hero-content">
-            <h1>Deuce Construction</h1>
-            <p>Second to None</p>
-            <a href="#contact" class="cta-button">Get a Free Estimate</a>
-        </div>
-    </header>
-
     <div class="container">
-        <section id="services" class="services-section">
-            <h2>Our Services</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M4 4v16M8 4v16M12 4v16M16 4v16M20 4v16"/>
-                        <path d="M2 8h20M2 16h20"/>
-                    </svg>
-                    <h3>Outdoor</h3>
-                    <p>Custom fences, decks, and sheds for your outdoor space</p>
+        <section class="gallery-section">
+            <h1>Project Gallery</h1>
+            <div class="gallery" style="display: flex; align-items: center;">
+                <button class="nav-button prev" onclick="showPrevious()">&lt;</button>
+                <div class="gallery-item" style="display: none;">
+                    <img src="images/gate.jpg" alt="Project 1">
+                    <p>A classic wooden picket fence with a sturdy double gate. The wave-top design adds charm while providing security and easy access to your yard.</p>
                 </div>
-                <div class="service-card">
-                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M12 1v22M1 12h22M3.76 3.76l16.48 16.48M20.24 3.76L3.76 20.24"/>
-                        <circle cx="12" cy="12" r="8"/>
-                    </svg>
-                    <h3>Marine</h3>
-                    <p>Professional dock replacement and repair services</p>
+                <div class="gallery-item" style="display: none;">
+                    <img src="images/small_deck.jpg" alt="Project 2">
+                    <p>This compact waterfront deck is built with durable composite decking for a clean, low-maintenance finish. A built-in bench with simple horizontal slats provides comfortable seating</p>
                 </div>
-                <div class="service-card">
-                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M3 12l9-9 9 9v8a2 2 0 01-2 2H5a2 2 0 01-2-2v-8z"/>
-                        <path d="M14 22v-6h-4v6"/>
-                        <path d="M16 5h2v4"/>
-                    </svg>
-                    <h3>Residential</h3>
-                    <p>Built-in shelves and custom carpentry solutions</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="projects" class="projects-section">
-            <h2>Featured Projects</h2>
-            <div class="project-grid">
-                <div class="project-card">
-                    <a href="projects.html"><img src="images/gate.jpg" alt="Rounded fence gate"></a>
-                    <h3>Fences</h3>
-                </div>
-                <div class="project-card">
-                    <a href="projects.html"><img src="images/white_dock.JPG" alt="White Dock"></a>
-                    <h3>Decks</h3>
-                </div>
+                <button class="nav-button next" onclick="showNext()">&gt;</button>
             </div>
         </section>
     </div>
+    <script>
+        let currentIndex = 0;
+        const items = document.querySelectorAll('.gallery-item');
+        
+        function showItem(index) {
+            items.forEach(item => item.style.display = 'none');
+            items[index].style.display = 'block';
+        }
+        
+        function showNext() {
+            currentIndex = (currentIndex + 1) % items.length;
+            showItem(currentIndex);
+        }
+        
+        function showPrevious() {
+            currentIndex = (currentIndex - 1 + items.length) % items.length;
+            showItem(currentIndex);
+        }
+        
+        // Show first item initially
+        showItem(0);
+    </script>
 
     <footer id="contact">
         <div class="container">
@@ -144,6 +154,5 @@
             </div>
         </div>
     </footer>
-
 </body>
 </html>
