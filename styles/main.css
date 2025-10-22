@@ -75,7 +75,7 @@ header {
     background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../images/dune_bridge1.PNG');
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
+    background-repeat: no-repeat;
     height: 100vh;
     display: flex;
     align-items: center;
@@ -481,11 +481,23 @@ h2 {
     .review-card {
         padding: 2rem 1.5rem;
     }
+
+    header {
+        background-attachment: scroll;
+        min-height: 100vh;
+        min-height: -webkit-fill-available;
+        background-size: cover;
+        background-position: center top;
+    }
 }
 
 @supports (-webkit-touch-callout: none) {
     header {
+        background-attachment: scroll;
+        height: 100vh;
         height: -webkit-fill-available;
+        background-size: cover;
+        background-position: center;
     }
 }
 
